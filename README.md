@@ -65,7 +65,7 @@ flowchart LR
 零第三方依赖，纯 Python 标准库（3.8+）。
 
 ```bash
-git clone https://github.com/hwj441747625/free-compute-radar.git
+git clone https://github.com/huanghuninbox/free-token-radar-cn.git
 cd free-compute-radar
 cp .env.example .env   # 按需填 key；全空也能跑（跳过对应平台巡检）
 python radar.py        # 或 py -3 radar.py
