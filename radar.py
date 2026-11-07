@@ -24,12 +24,14 @@ SNAP = os.path.abspath(os.environ.get('SNAPSHOT_DIR', os.path.join(BASE, 'snapsh
 PROXY = os.environ.get('PROXY', '').strip() or None  # 如 http://127.0.0.1:10809；空=直连
 
 SOURCES = [
-    {'id': 'free-llm-api-resources', 'desc': 'raullenchai 免费LLM API大全(23K star,每日自动更新)',
-     'url': 'https://raw.githubusercontent.com/raullenchai/free-llm-api-resources/main/README.md'},
-    {'id': 'awesome-free-llm-apis', 'desc': 'mnfst 永久免费层清单',
+    {'id': 'awesome-free-llm-apis', 'desc': 'mnfst 永久免费层清单(每日更新)',
      'url': 'https://raw.githubusercontent.com/mnfst/awesome-free-llm-apis/main/README.md'},
+    {'id': 'awesome-freellm-apis-mr', 'desc': 'open-free-llm-api 机器可读目录(134+含限流/上下文)',
+     'url': 'https://raw.githubusercontent.com/open-free-llm-api/awesome-freellm-apis/main/README.md'},
 ]
 # 扩展点：后续可加厂商公告页/状态页（fetch 逻辑按 html 纯文本处理即可）
+# 选源铁律（v1.0.1 实测教训）：①信息源必须核实上游主仓，fork 不作源（曾误用 4 月停更的 fork 致 diff 全程失效）；
+# ②新源入列前必须 curl 实测 200（网传权威仓 cheahjs/free-llm-api-resources 实测全 404，挂起待核实）。
 
 def fetch(url):
     proxies = [PROXY, None] if PROXY else [None]  # 先代理后直连；未配代理只直连
