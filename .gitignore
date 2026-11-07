@@ -1,0 +1,11 @@
+# 密钥与配置（红线：任何 key 不进仓库）
+.env
+*.env
+!.env.example
+secrets*.env
+
+# 运行产物
+reports/
+snapshots/
+*.log
+__pycache__/
